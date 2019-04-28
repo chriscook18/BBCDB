@@ -87,7 +87,7 @@ class artistPage {
 		$title = $artistInfo['NAME'];
 		
 		if (!is_null($artistInfo['DESCRIPTION'])) {
-			$output .= "<p>" . $artistInfo['DESCRIPTION'] . "</p>";
+			$output .= "<p>" . parseText($artistInfo['DESCRIPTION']) . "</p>";
 		}
 		
 		if (!empty($artistInfo['WIKIPEDIA'])) {
@@ -197,3 +197,4 @@ class artistPage {
 		return $ids;
 	}
 }
+

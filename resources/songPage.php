@@ -161,7 +161,7 @@ class songPage
 
         if (! is_null($songInfo['DESCRIPTION']) or $songInfo['DESCRIPTION'] != '') {
         	$output .= "<p class='flex-item' id='songDesc'>";
-        	$output .= $songInfo['DESCRIPTION'];
+        	$output .= parseText($songInfo['DESCRIPTION']);
         	$output .= "</p>";
         }
         

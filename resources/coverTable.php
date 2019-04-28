@@ -228,7 +228,7 @@ class coverTable {
 		$output .= getListenLinks($cover);
 		$output .= "</span></td>";
 		
-		$output .= "<td><span>" . $cover['NOTES'] . "</span></td>";
+		$output .= "<td><span>" . parseText($cover['NOTES']) . "</span></td>";
 		$output .= "</tr>";
 		
 		return $output;

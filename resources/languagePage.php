@@ -54,7 +54,7 @@ class languagePage {
 
 				// Some have Youtube, some Spotify, some neither, some both.
 				$output .= getListenLinks($cover);
-				$output .= "<td>" . $cover['NOTES'] . "</td>";
+				$output .= "<td>" . parseText($cover['NOTES']) . "</td>";
 				$output .= "</tr>";
 			}
 			$output .= "</table>";

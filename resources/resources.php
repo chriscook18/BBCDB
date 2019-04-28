@@ -148,7 +148,22 @@ function specialAlbum($album, $type) {
 		default:
 			$output .= "<i>$album</i>";
 			break;
-	}
 	return $output;
+	}
 }
 
+function parseText($sText){
+	//Take text string and parse out links
+	//
+	// $sText  string to parse
+	//
+	// RETURN parsed string $sText
+	
+	//artist link
+	$sText = preg_replace("/\[a(\d+) ([^\]]*)\]/", "<a href=\"artist.php?$1\">$2</a>", $sText);
+	
+	//song link
+	$sText = preg_replace("/\[s(\d+) ([^\]]*)\]/", "\"<a href=\"song.php?$1\">$2</a>\"", $sText);
+	
+	return $sText;
+}
