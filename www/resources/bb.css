@@ -1,0 +1,330 @@
+/************/
+/* FLEX BOX */
+/***********/
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+.flex-container-internal {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:column;
+  justify-content:space-around;
+}
+
+.flex-container-titlerow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+}
+
+.flex-item{
+}
+
+/*****************/
+/** General site **/
+/*****************/
+
+.padleft {
+	margin: 0em 0em 0em 1em;
+}
+
+.padhalfleft {
+	margin: 0em 0em 0em 0.5em;
+}
+
+.padhalftop {
+	margin-top: 0.5em;
+}
+
+/**Links should not change colour when clicked **/
+a {
+	color: #0000FF;
+    text-decoration: underline;
+}
+
+/** Bit that says "beach boys cover database" **/
+.header {
+    text-align: center;
+}
+
+.header h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbox {
+	border: 1px solid black;
+	background-color: rgba(135, 232, 225, 0.44) !important; 
+	
+}
+
+/*************/
+/* Song lists */
+/**************/
+.albumBox {
+	background-color: rgba(191, 247, 244, 0.72); 
+	border-radius: 1em;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+#songListBox {
+	margin-bottom:2em;
+}
+
+/***************/
+/** Song page **/
+/**************/
+.dropdown {
+	margin:0em 1em 1em 0em;
+}
+
+#headingBox {
+	background-color: rgba(191, 247, 244, 0.72); 
+	border-radius: 1em;
+	padding: 1em;
+	/*Stop long descriptions pushing the image out of line */
+	flex-wrap:nowrap;
+}
+
+.songTitle {
+	margin: 0em 0em 0em 0em;
+}
+
+#songDesc{
+}
+
+/*****************/
+/** Covers table **/
+/******************/
+#radios-table {
+	width: 100%;
+}
+
+.radios-div{
+	border-radius: 1em;
+	background-color: rgba(191, 247, 244, 0.72);
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+
+#page {
+  display: block;
+  box-sizing: border-box;
+  width: auto;
+  padding: 1em 2vw;
+  margin: 1em 2vw;
+  color: #000;
+  /***LOCALHOST**/
+  background-color: LemonChiffon;
+  /*background-color: rgba(236, 252, 252, 0.72);*/
+  border: 0.07em solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.5em;
+}
+
+.covers-table-div table {
+  margin: 1em 0;
+  border-collapse: collapse;
+/*   width: 100%; */
+}
+
+.covers-table-div th,
+.covers-table-div td {
+  padding: 0.25em 0.5em 0.25em 1em;
+  vertical-align: text-top;
+  text-align: left;
+  text-indent: -0.5em;
+}
+
+.covers-table-div th {
+  vertical-align: bottom;
+  background-color: rgba(145, 237, 237, 0.71);
+  color: #3A3A3A;
+  font-weight: bold;
+}
+
+.covers-table-div td::before {
+  display: none;
+}
+
+.covers-table-div tr:nth-child(even) {
+  background-color: whitesmoke;
+}
+
+.covers-table-div tr:nth-child(odd) {
+  background-color: white;
+}
+
+
+.covers-table-div div {
+  overflow: auto;
+}
+
+@media screen and (max-width: 37em) {
+  .covers-table-div table,
+ .covers-table-div  tr,
+ .covers-table-div  td {
+    display: block;
+  }
+  .covers-table-div tr {
+    padding: 0.7em 2vw;
+  }
+  .covers-table-div th {
+    display: none;
+  }
+  .covers-table-div td::before {
+    display: inline;
+    font-weight: bold;
+  }
+  .covers-table-div td {
+    display: grid;
+    grid-template-columns: 4em auto;
+    grid-gap: 1em 0.5em;
+  }
+
+  .covers-table-div td:nth-of-type(3) {
+    text-align: left;
+  }
+
+ .covers-table-div td:nth-of-type(4)::before, .covers-table-div td:nth-of-type(5)::before {
+    text-align: left;
+  }
+  .covers-table-div td:nth-of-type(2)::before {
+    font-style: normal;
+  }
+}
+
+
+
+/******* END TABLE STUFF *********/
+/*                               */
+/*********************************/
+
+/****************************/
+/*                          */
+/*       NAVBAR STUFF       */
+/*                          */
+/****************************/
+
+/* Navbar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+    text-align: center;
+}
+
+/* Navbar dropdown container */
+.dropdownNav {
+    float: left;
+    overflow: hidden;
+}
+
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+.navbar button a {
+    padding: 0;
+}
+
+/* Navbar dropdown button */
+.dropdownNav .dropdown_button {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+/* Add background colour to navbar links on hover */
+.navbar a:hover, .dropdownNav:hover .dropdown_button {
+    background-color: lightskyblue;
+}
+
+/* Dropdown content make hidden by default */
+.dropdown_content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-color: black;
+    min-width: 100px;
+    z-index: 1;
+}
+
+/* Links in the dropdown */
+.dropdown_content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add background color to dropdown links on hover */
+.dropdownNav:hover .dropdown_content {
+    display: block;
+}
+
+/*******************/
+/* MAIN PAGE *****/
+/****************/
+.mainPageBox {
+	background-color: rgba(191, 247, 244, 0.72); 
+	border-radius: 1em;
+	padding: 0.5em 1em 0.5em 1em;
+	margin-bottom: 1em;
+}
+
+.recentAdditionsList {
+	list-style-type: none;
+}
+
+/*************************/
+/** TOOLTIP FOR FILTERS **/
+/************************/
+.tooltip {
+ 	position: relative;
+ 	border-bottom: 0.5px dotted black; 
+ 	display: inline-block;
+}
+
+.tooltip .tooltiptext {
+	width: 100px;
+	top: 110%;
+	visibility: hidden;
+	position: absolute;
+	z-index: 1;
+
+	background-color: black;
+	color: #fff;
+	
+	text-align: center;
+	padding: 0.5em;
+	border-radius: 1em;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/***********************************/
+/** CLASSES FOR HIDING TABLE ROWS **/
+/***********************************/
+/* Hide these rows */
+tr.invisible, .zeroRowHide, .bbRowHide, .otherRowHide, .liveRowHide, .sampleRowHide, .miscRowHide, .studioRowHide, .medleyRowHide {
+	display: none;
+}
