@@ -148,8 +148,8 @@ function specialAlbum($album, $type) {
 		default:
 			$output .= "<i>$album</i>";
 			break;
-	return $output;
 	}
+	return $output;
 }
 
 function parseText($sText){
