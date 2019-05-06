@@ -3,7 +3,7 @@
 <html lang=en>
 
 <head>
-	<title>David Marks Songs| The Beach Boys Cover Database</title>
+	<title>David Marks Songs | The Beach Boys Cover Database</title>
 	<link rel="stylesheet" href="resources/bb.css">
 	<meta name="author" content="Chris Cook">
 	
@@ -14,11 +14,11 @@
 	<!-- sortable tables -->
 	<script>
 		$(function(){
-		$("#davidSongs").stupidtable();
+		$("#covers").stupidtable();
 		});
 	 </script>
 
-<!-- google analytics removed -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
 
 
 </head>

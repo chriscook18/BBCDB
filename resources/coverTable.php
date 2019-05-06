@@ -3,13 +3,14 @@
 class coverTable {
 	
 	// Build up and return a table of covers
-	public static function getCoverTable($coverInfoGet, $bArtistMode = false, $bSkipRadio = false) {
+	public static function getCoverTable($coverInfoGet, $bArtistMode = false, $bSkipRadio = false, $sTitles = array(), $id = 0) {
 		// Create a HTML table of all covers for a given query $coverInfoGet.
 		//
 		// $coverInfoGet - database query results
 		// $bArtistMode - BOOL - TRUE if displaying on an artist page. ELSE displaying on a song page
 		// $bSkipRadios - BOOL - If TRUE we don't give the filtering options.
-		
+		// $sTitles - song Titles array
+		// $id - song page id
 		//
 		// RETURN - $output - HTML code
 		$output = ""; // Return value
@@ -29,7 +30,7 @@ class coverTable {
 		
 		while ($cover = $coverInfoGet->fetch_assoc()) {
 			// One line for each row we read.
-			$output .= self::getCoverTable_coverRow($cover, $bArtistMode);
+			$output .= self::getCoverTable_coverRow($cover, $bArtistMode, $sTitles, $id);
 		}
 		
 		$output .= "</tbody>";
@@ -177,11 +178,13 @@ class coverTable {
 		return $output;
 	}
 	
-	private function getCoverTable_coverRow($cover, $bArtistMode) {
+	private function getCoverTable_coverRow($cover, $bArtistMode, $sTitles = array(), $songID = 0) {
 		// Create a table row from the cover record.
 		//
 		// $cover - database query results
 		// $bArtistMode - BOOL - TRUE if displaying on an artist page. ELSE displaying on a song page
+		// $sTitles - song title array
+		// $songID - song page so we can avoid displaying song titles unnecessarily
 		//
 		// RETURN - $output - HTML for table row
 		$class = self::getCoverTable_buildClass($cover, $bArtistMode);
@@ -200,6 +203,8 @@ class coverTable {
 		
 		if (!is_null($cover['CALLED'])) {
 			$output .= "<br /> (covered as \"" . $cover['CALLED'] . "\")";
+		} else if (!$bArtistMode && $cover['SONG'] != $songID ) {
+			$output .= "<br /> (cover of \"" . $sTitles[$cover['SONG']] . "\")";
 		}
 		
 		$output .= "</span></td>";

@@ -288,7 +288,7 @@ class artistLists {
 		$output .= "<a href='#letterSpecial'>!</a> &#8226; <a href='#letter0'>0</a> &#8226; <a href='#letter1'>1</a> &#8226; &#8226; <a href='#letter2'>2</a>
 		&#8226; <a href='#letter3'>3</a> &#8226; <a href='#letter4'>4</a> &#8226; <a href='#letter5'>5</a> &#8226; <a href='#letter6'>6</a>
 		&#8226; <a href='#letter7'>7</a> &#8226; <a href='#letter8'>8</a> &#8226; <a href='#letter9'>9</a> &#8226; 
-		<a href='#letterA'>A</a> &#8226; <a href='#letterB'>B</a> &#8226; <a href='#letterC'>C</a> &#8226; <a href='#letterD'>D</a> &#8226; E
+		<a href='#letterA'>A</a> &#8226; <a href='#letterB'>B</a> &#8226; <a href='#letterC'>C</a> &#8226; <a href='#letterD'>D</a> &#8226; <a href='#letterE'>E</a>
 		&#8226; <a href='#letterF'>F</a> &#8226; <a href='#letterG'>G</a> &#8226; <a href='#letterH'>H</a>
 		&#8226; <a href='#letterI'>I</a> &#8226; <a href='#letterJ'>J</a> &#8226; <a href='#letterK'>K</a>
 		&#8226; <a href='#letterL'>L</a> &#8226; <a href='#letterM'>M</a> &#8226; <a href='#letterN'>N</a>

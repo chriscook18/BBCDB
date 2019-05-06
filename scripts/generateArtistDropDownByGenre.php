@@ -2,22 +2,29 @@
 require_once('../resources/connection.php');
 
 // Generate drop downs and bulleted lists for artist genres
-$code = $argv[1];
-
-if ($code == "ALL") {
-	perGenre("C");
-	perGenre("E");
-	perGenre("K");
-	perGenre("J");
-	perGenre("P");
-	perGenre("R6");
-	perGenre("R7");
-	perGenre("R9");
-	perGenre("V");
-	perGenre("M");
-	perGenre("Y");
-} else {
-	perGenre($code);
+while (false) {
+	if (isset($argv[1])) {
+		$code = $argv[1];
+	} else {
+		echo "Enter an argument";
+		break;
+	}
+	
+	if ($code == "ALL") {
+		perGenre("C");
+		perGenre("E");
+		perGenre("K");
+		perGenre("J");
+		perGenre("P");
+		perGenre("R6");
+		perGenre("R7");
+		perGenre("R9");
+		perGenre("V");
+		perGenre("M");
+		perGenre("Y");
+	} else {
+		perGenre($code);
+	}
 }
 
 function perGenre($code) {

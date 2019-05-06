@@ -21,15 +21,18 @@ class languagePage {
 		
 		if ($coverInfoGet->num_rows > 0) {
 			$output .= "<div class='covers-table-div'>";
-			$output .= "<table style=\"width:100%\" border = 1>";
+			$output .= "<table style=\"width:100%\" border = 1 id='covers' display:default>";
+			$output .= "<thead>";
 			$output .= "<tr>
-			 <th>Song</th>
+			 <th data-sort=\"string\">Song</th>
 			 <th>Artist</th>
 			 <th>Album</th>
-			 <th>Year</th>
+			 <th data-sort='int'>Year</th>
 			 <th style='width:25%'>Listen</th>
 			 <th style='width:35%'>Notes</th>
 		 </tr>";
+			$output .= "</thead>";
+			$output .= "<tbody>";
 			
 			while ($cover = $coverInfoGet->fetch_assoc()) {
 				
@@ -57,6 +60,7 @@ class languagePage {
 				$output .= "<td>" . parseText($cover['NOTES']) . "</td>";
 				$output .= "</tr>";
 			}
+			$output .= "</tbody>";
 			$output .= "</table>";
 			$output .= "</div>";
 			

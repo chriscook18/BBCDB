@@ -7,13 +7,13 @@
 	<link rel="stylesheet" href="resources/bb.css">
 	<meta name="author" content="Chris Cook">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/songLists.js"></script>
 	
-<!-- google analytics removed -->
-
+	<!-- Global site tag (gtag.js) - Google Analytics -->
 
 </head>
 
-<body onload = "checkJQuery()" id = "page">
+<body id = "page">
 
 
 <?php

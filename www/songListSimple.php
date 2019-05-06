@@ -12,10 +12,12 @@
 	<!-- sortable tables -->
 	<script>
 		$(function(){
-		$("#AllSongs").stupidtable();
+		$("#covers").stupidtable();
 		});
 	 </script>
-<!-- google analytics removed -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
 </head>
 
 <body id = "page">

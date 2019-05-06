@@ -5,9 +5,11 @@ class songDisplay {
 	/* TABLE FORMATS */
 	/* ************** */
 	public function songTableFormat($sID) {
+		//$sID - unused
+		
 		$output = ""; // Return value
 		
-		$output .= "<table style=\"width:100%\" border = 1 id='" . $sID . "'>";
+		$output .= "<table style=\"width:100%\" border = 1 id='covers' class='coversTable'>";
 		$output .= "<thead>";
 		$output .= "<tr>
 				 <th data-sort='string'>Song <img src='resources/images/sort.png' height=\"15\" width=\"15\"></th>
@@ -57,7 +59,7 @@ class songDisplay {
 			$iLink = $songRecord['ID'];
 		}
 		
-		$line .= '<td>"<a href="song.php?' . $iLink . '">' . $songRecord['TITLE'] . '</a>"</td>';
+		$line .= '<td><span>"<a href="song.php?' . $iLink . '">' . $songRecord['TITLE'] . '</a>"</span></td>';
 		$line .= '<td>' . specialAlbum($songRecord['ALBUM'], $songRecord['ALBUMTYPE']);
 		if ($songRecord['ARTIST'] != "The Beach Boys") {
 			$line .= "<br />(" . $songRecord['ARTIST'] .")</br>"; 

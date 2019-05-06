@@ -100,27 +100,38 @@ class songLink {
 		return $songInfo;
 	}
 	
-	public function buildLinkCoversQuery($songInfo, $songLink) {
+	public function buildLinkCoversQuery($songInfo, $songLink, $conn, &$songTitles) {
 		// Build up the covers query to include linked songs
 		//
 		// $songInfo - song record
 		// $songLink - song link record
+		// $conn - connection info
+		// $songTitles - title array
 		//
 		// RETURN $output - SQL component
-		$output = "SONG IN (" . $songInfo['ID'];
+		$output = "SONG IN ";
+		$ids = "(" . $songInfo['ID'];
 		
 		if (!is_null($songLink['ALTSONG1'])) {
-			$output .= ", " . $songLink['ALTSONG1'];
+			$ids .= ", " . $songLink['ALTSONG1'];
 		}
 		if (!is_null($songLink['ALTSONG2'])) {
-			$output .= ", " . $songLink['ALTSONG2'];
+			$ids .= ", " . $songLink['ALTSONG2'];
 		}
 		if (!is_null($songLink['ALTSONG3'])) {
-			$output .= ", " . $songLink['ALTSONG3'];
+			$ids .= ", " . $songLink['ALTSONG3'];
 		}
 		
-		$output .= ")";
+		$ids .= ")";
+
+		$output .= $ids;
 		
+		$sql = "select TITLE, ID from songs where id in " . $ids;
+		$result = $conn->getQuery($sql);
+		
+		while ($title = $result->fetch_assoc()) {
+			$songTitles[$title['ID']] = $title['TITLE'];
+		}
 		return $output;
 	}
 	

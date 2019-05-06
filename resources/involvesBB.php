@@ -87,7 +87,7 @@ class involvesBB {
 		
 		if ( $coverInfoGet->num_rows > 0 ) {
 			$output .= "<div class='covers-table-div'>";
-			$output .= "<table style=\"width:100%\" border = 1>";
+			$output .= "<table style=\"width:100%\" border = 1 id='covers'>";
 			$output .= "<tr>
 				 <th>Song</th>
 				 <th>Artist</th>

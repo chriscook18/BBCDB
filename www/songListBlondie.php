@@ -14,10 +14,11 @@
 	<!-- sortable tables -->
 	<script>
 		$(function(){
-		$("#blondieSongs").stupidtable();
+		$("#covers").stupidtable();
 		});
 	 </script>
-<!-- google analytics removed -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
 
 
 </head>

@@ -8,9 +8,17 @@
 	<meta name="author" content="Chris Cook">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/songLists.js"></script>
+	<script type="text/javascript" src="resources/stupidtable.min.js"></script>
 	
-<!-- google analytics removed -->
-
+	<!-- sortable tables -->
+	<script>
+		$(function(){
+		$("#covers").stupidtable();
+		});
+	 </script>
+	 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
 
 </head>
 
@@ -31,7 +39,7 @@ $output .= loadHeader();
 $output .= "<div id=\"margins\">";
 
 $conn = new connection();
-//TODO not hardcode all this
+
 $output .= "<div id='songPage'>";
 $output .= "<h2>Covers in non-English languages.</h2>";
 $output .= languagePage::languageListBar();

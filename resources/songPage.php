@@ -173,17 +173,19 @@ class songPage
 
     private function coversTable($conn, $id, $songInfo, $bSongLink, $songLink)
     {
+    	
+    	$titles = array();
         if ($bSongLink) {
-            $bConditional = songLink::buildLinkCoversQuery($songInfo, $songLink);
+            $bConditional = songLink::buildLinkCoversQuery($songInfo, $songLink, $conn, $titles);
         } else {
             $bConditional = "SONG=" . $id . "";
         }
-        $coverInfoQuery = "SELECT artists.NAME, covers.YEAR, covers.CALLED, covers.ALBUM, covers.NOTES, covers.SPOTIFY, covers.YOUTUBE, covers.OTHERLISTEN, covers.OTHERDESC,  covers.ID, covers.ALBUMSPECIAL, covers.LIVECOVER, covers.SAMPLES, covers.MEDLEY, covers.BBHIDE, covers.MISCCOVER, artists.SORTNAME, artists.ID as artID FROM covers INNER JOIN artists WHERE artists.ID = covers.ARTIST AND " . $bConditional . "  ORDER BY SORTNAME ASC";
+        $coverInfoQuery = "SELECT artists.NAME, covers.YEAR, covers.CALLED, covers.ALBUM, covers.NOTES, covers.SPOTIFY, covers.YOUTUBE, covers.OTHERLISTEN, covers.OTHERDESC,  covers.ID, covers.ALBUMSPECIAL, covers.LIVECOVER, covers.SAMPLES, covers.MEDLEY, covers.BBHIDE, covers.MISCCOVER, artists.SORTNAME, artists.ID as artID, covers.SONG FROM covers INNER JOIN artists WHERE artists.ID = covers.ARTIST AND " . $bConditional . "  ORDER BY SORTNAME ASC";
         $coverInfoGet = $conn->getQuery($coverInfoQuery);
         $output = "";
         
         if ($coverInfoGet->num_rows > 0) {
-        	$output .= coverTable::getCoverTable($coverInfoGet);
+        	$output .= coverTable::getCoverTable($coverInfoGet, FALSE, FALSE, $titles, $id);
             $output .= "<h3>Is there a cover of \"" . $songInfo['TITLE'] . "\" missing? Please <a href=\"contact.php\">get in touch.</a>";
         } else {
             if ($songInfo['COVER']) {
